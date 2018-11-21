@@ -256,8 +256,11 @@ public class telaCadastro extends javax.swing.JFrame {
     private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
         // verifica se tem algum jInternalFrame igual aberto
         if (verVenda == null) {
-            verVenda = new TelaVenda();
-            // Inserir o objeto Loja no parâmetro da TelaVenda para carregar os produtos?
+            try{
+                verVenda = new TelaVenda(loja);
+            } catch(IOException e){
+                JOptionPane.showMessageDialog(null, "Não foi possível criar a tela de vendas.");
+            }
         }
         // se não estiver visível ele adiciona ao jDP e torna visível
         if (!verVenda.isVisible()) {
