@@ -37,6 +37,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        botoesSexo = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         nomeCliente = new javax.swing.JTextField();
@@ -175,8 +176,10 @@ public class TelaCliente extends javax.swing.JInternalFrame {
 
         jLabel13.setText("Sexo:");
 
+        botoesSexo.add(sexoClienteM);
         sexoClienteM.setText("M");
 
+        botoesSexo.add(sexoClienteF);
         sexoClienteF.setText("F");
 
         jLabel14.setText("Naturalidade:");
@@ -464,6 +467,7 @@ this.dispose();        // TODO add your handling code here:
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup botoesSexo;
     private javax.swing.JFormattedTextField codigoCliente;
     private javax.swing.JFormattedTextField cpfCliente;
     private javax.swing.JTextField emailCliente;

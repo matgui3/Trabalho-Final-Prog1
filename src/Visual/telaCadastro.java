@@ -1,6 +1,5 @@
 package Visual;
 
-
 import Modelos.Loja;
 import java.beans.PropertyVetoException;
 import java.io.IOException;
@@ -30,11 +29,9 @@ public class telaCadastro extends javax.swing.JFrame {
     /**
      * Creates new form telaCadastro
      */
-    public telaCadastro() throws IOException, PropertyVetoException {
-        loja  = new Loja();
+    public telaCadastro() {
+        loja = new Loja();
         initComponents();
-        
-    
 
     }
 
@@ -198,7 +195,7 @@ public class telaCadastro extends javax.swing.JFrame {
             jDesktopPane1.add(verCliente);
             verCliente.setVisible(true);
             verCliente.setPosicao();
-           
+
         }
 
         verCliente.toFront();
@@ -226,7 +223,7 @@ public class telaCadastro extends javax.swing.JFrame {
             jDesktopPane1.add(verFornecedor);
             verFornecedor.setVisible(true);
             verFornecedor.setPosicao();
-           
+
         }
 
         verFornecedor.toFront();
@@ -244,7 +241,7 @@ public class telaCadastro extends javax.swing.JFrame {
             jDesktopPane1.add(verFuncionario);
             verFuncionario.setVisible(true);
             verFuncionario.setPosicao();
-            
+
         }
         verFuncionario.toFront();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
@@ -256,18 +253,14 @@ public class telaCadastro extends javax.swing.JFrame {
     private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
         // verifica se tem algum jInternalFrame igual aberto
         if (verVenda == null) {
-            try{
-                verVenda = new TelaVenda(loja);
-            } catch(IOException e){
-                JOptionPane.showMessageDialog(null, "Não foi possível criar a tela de vendas.");
-            }
+            verVenda = new TelaVenda(loja);
         }
         // se não estiver visível ele adiciona ao jDP e torna visível
         if (!verVenda.isVisible()) {
             jDesktopPane1.add(verVenda);
             verVenda.setVisible(true);
             verVenda.setPosicao();
-            
+
         }
         verVenda.toFront();
 
@@ -284,14 +277,12 @@ public class telaCadastro extends javax.swing.JFrame {
             jDesktopPane1.add(verProduto);
             verProduto.setVisible(true);
             verProduto.setPosicao();
-            
-        }
-        
-      
-        verProduto.toFront();
-        
 
-        
+        }
+
+        verProduto.toFront();
+
+
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     /**
@@ -324,12 +315,7 @@ public class telaCadastro extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                try {
-                    new telaCadastro().setVisible(true);
-                } catch (IOException ex) {
-                    Logger.getLogger(telaCadastro.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (PropertyVetoException ex) {
-                    Logger.getLogger(telaCadastro.class.getName()).log(Level.SEVERE, null, ex);            }
+                new telaCadastro().setVisible(true);
             }
         });
     }
