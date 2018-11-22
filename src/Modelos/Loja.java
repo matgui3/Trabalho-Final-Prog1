@@ -45,7 +45,7 @@ public class Loja {
     }
 
     public void gravarProdutoArquivo() throws IOException {
-        File arq = new File("C:/Users/guilh/Documents/GitKraken/Trabalho-Final-Prog1/produtos.txt");
+        File arq = new File("C:/ArquivoProdutosJava.txt");
         try {
             FileWriter gravadorArq = new FileWriter(arq);
             BufferedWriter gravadorTexto = new BufferedWriter(gravadorArq);
@@ -64,7 +64,7 @@ public class Loja {
     }
 
     public void lerProdutosArquivo() {
-        File arq = new File("C:/Users/guilh/Documents/GitKraken/Trabalho-Final-Prog1/produtos.txt");
+        File arq = new File("C:/ArquivoProdutosJava.txt");
         try {
             FileReader leitorArq = new FileReader(arq);
             BufferedReader leitorTexto = new BufferedReader(leitorArq);
@@ -93,7 +93,8 @@ public class Loja {
             leitorTexto.close();
             leitorArq.close();
         } catch (FileNotFoundException e) {
-            JOptionPane.showMessageDialog(null, "Arquivo de produtos não encontrado. Tente novamente.");
+            JOptionPane.showMessageDialog(null, "Arquivo de produtos não encontrado. Crie C:/ArquivoProdutosJava.txt e Tente novamente.");
+            System.exit(0);
         } catch (IOException e) {
             JOptionPane.showMessageDialog(null, "Impossível ler os produtos do arquivo. Tente novamente.");
         }
@@ -101,7 +102,7 @@ public class Loja {
     }
 
     public void lerPessoasArquivo() {
-        File arq = new File("C:/Users/guilh/Documents/GitKraken/Trabalho-Final-Prog1/ArquivoPessoasJava.txt");
+        File arq = new File("C:/ArquivoPessoasJava.txt");
         try {
             FileReader leitorArq = new FileReader(arq);
             BufferedReader leitorTexto = new BufferedReader(leitorArq);
@@ -163,7 +164,8 @@ public class Loja {
             leitorTexto.close();
             leitorArq.close();
         } catch (FileNotFoundException e) {
-            JOptionPane.showMessageDialog(null, "Arquivo não encontrado. Tente novamente.");
+            JOptionPane.showMessageDialog(null, "Arquivo de Pessoas não encontrado. Crie C:/ArquivoPessoasJava.txt e Tente novamente.");
+            System.exit(0);
         } catch (IOException e) {
             JOptionPane.showMessageDialog(null, "Não foi possível ler os dados do arquivo. Tente novamente.");
         }
@@ -175,7 +177,7 @@ public class Loja {
     }
 
     public void gravarPessoasArquivo() {
-        File arq = new File("C:/Users/guilh/Documents/GitKraken/Trabalho-Final-Prog1/ArquivoPessoasJava.txt");
+        File arq = new File("C:/ArquivoPessoasJava.txt");
         try {
             FileWriter gravadorArq = new FileWriter(arq);
             BufferedWriter gravadorTexto = new BufferedWriter(gravadorArq);
