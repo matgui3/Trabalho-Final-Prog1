@@ -86,63 +86,62 @@
                           </Group>
                           <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="nomeCliente" alignment="0" min="-2" pref="287" max="-2" attributes="0"/>
-                                      <Component id="emailCliente" alignment="0" min="-2" pref="287" max="-2" attributes="0"/>
-                                      <Component id="endCliente1" alignment="0" min="-2" pref="287" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="naturalidadeCliente" min="-2" pref="149" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                          <Component id="sexoClienteM" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="sexoClienteF" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace pref="30" max="32767" attributes="0"/>
-                                          <Component id="nascimentoCliente" min="-2" pref="149" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                              <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="tfRgCliente" alignment="0" pref="287" max="32767" attributes="0"/>
+                                  <Component id="tfNomeMaeCliente" alignment="0" pref="287" max="32767" attributes="0"/>
+                                  <Component id="tfCpfCliente" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="tfLocalTrabCliente" max="32767" attributes="0"/>
+                                  <Component id="tfProfCliente" pref="287" max="32767" attributes="0"/>
+                                  <Component id="tfEmpresaCliente" alignment="0" pref="287" max="32767" attributes="0"/>
+                                  <Component id="tfRendaCliente" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="tfTelefoneCliente" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="endCliente2" pref="287" max="32767" attributes="0"/>
-                                      <Component id="rgCliente" alignment="0" pref="287" max="32767" attributes="0"/>
-                                      <Component id="nomeMaeCliente" alignment="0" pref="287" max="32767" attributes="0"/>
-                                      <Component id="cpfCliente" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="localTrabCliente" max="32767" attributes="0"/>
-                                      <Component id="profCliente" pref="287" max="32767" attributes="0"/>
-                                      <Component id="empresaCliente" alignment="0" pref="287" max="32767" attributes="0"/>
-                                      <Component id="rendaCliente" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="telefoneCliente" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="tfNomeCliente" alignment="0" min="-2" pref="287" max="-2" attributes="0"/>
+                                      <Component id="tfEmailCliente" alignment="0" min="-2" pref="287" max="-2" attributes="0"/>
+                                      <Component id="tfEndCliente" alignment="0" min="-2" pref="287" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel15" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel14" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel13" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="36" pref="36" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="tfNascimentoCliente" alignment="1" min="-2" pref="149" max="-2" attributes="0"/>
+                                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="sexoClienteM" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="sexoClienteF" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="tfNaturalidadeCliente" min="-2" pref="149" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
                           </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
-                                  <Component id="salvarCliente" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="570" max="32767" attributes="0"/>
-                                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btSalvarCliente" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="571" max="32767" attributes="0"/>
+                                  <Component id="btSairCliente" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="codigoCliente" min="-2" pref="126" max="-2" attributes="0"/>
+                                  <Component id="tfCodigoCliente" min="-2" pref="126" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -157,7 +156,7 @@
                   <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="nomeCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfNomeCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="sexoClienteM" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="sexoClienteF" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -165,30 +164,29 @@
                   <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="emailCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfEmailCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="naturalidadeCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfNaturalidadeCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="endCliente1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfEndCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="nascimentoCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfNascimentoCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                  <Component id="endCliente2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="telefoneCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tfTelefoneCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="cpfCliente" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfCpfCliente" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="rgCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tfRgCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -199,7 +197,7 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="nomeMaeCliente" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfNomeMaeCliente" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -207,32 +205,32 @@
                   <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="localTrabCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfLocalTrabCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="profCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfProfCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="empresaCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfEmpresaCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="rendaCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfRendaCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="17" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="codigoCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfCodigoCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="salvarCliente" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btSalvarCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btSairCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
               </Group>
@@ -245,25 +243,25 @@
             <Property name="text" type="java.lang.String" value="Nome:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="nomeCliente">
+        <Component class="javax.swing.JTextField" name="tfNomeCliente">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nomeClienteActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfNomeClienteActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="salvarCliente">
+        <Component class="javax.swing.JButton" name="btSalvarCliente">
           <Properties>
             <Property name="text" type="java.lang.String" value="Salvar"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="salvarClienteActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btSalvarClienteActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="btSairCliente">
           <Properties>
             <Property name="text" type="java.lang.String" value="Sair"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btSairClienteActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
@@ -286,19 +284,14 @@
             <Property name="text" type="java.lang.String" value="C&#xf3;digo:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="emailCliente">
+        <Component class="javax.swing.JTextField" name="tfEmailCliente">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="emailClienteActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfEmailClienteActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="endCliente1">
+        <Component class="javax.swing.JTextField" name="tfEndCliente">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="endCliente1ActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JTextField" name="endCliente2">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="endCliente2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfEndClienteActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
@@ -306,14 +299,14 @@
             <Property name="text" type="java.lang.String" value="CPF:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="nomeMaeCliente">
+        <Component class="javax.swing.JTextField" name="tfNomeMaeCliente">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nomeMaeClienteActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfNomeMaeClienteActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="rgCliente">
+        <Component class="javax.swing.JTextField" name="tfRgCliente">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rgClienteActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfRgClienteActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel7">
@@ -374,66 +367,66 @@
             <Property name="text" type="java.lang.String" value="Naturalidade:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="naturalidadeCliente">
+        <Component class="javax.swing.JTextField" name="tfNaturalidadeCliente">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel15">
           <Properties>
             <Property name="text" type="java.lang.String" value="Data de Nascimento:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="cpfCliente">
+        <Component class="javax.swing.JFormattedTextField" name="tfCpfCliente">
           <Properties>
             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
               <Format format="###.###.###-##" subtype="-1" type="5"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cpfClienteActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfCpfClienteActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="nascimentoCliente">
+        <Component class="javax.swing.JFormattedTextField" name="tfNascimentoCliente">
           <Properties>
             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
               <Format format="##/##/####" subtype="-1" type="5"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nascimentoClienteActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfNascimentoClienteActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="localTrabCliente">
+        <Component class="javax.swing.JTextField" name="tfLocalTrabCliente">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="localTrabClienteActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfLocalTrabClienteActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="profCliente">
+        <Component class="javax.swing.JTextField" name="tfProfCliente">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="profClienteActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfProfClienteActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="empresaCliente">
+        <Component class="javax.swing.JTextField" name="tfEmpresaCliente">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="empresaClienteActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfEmpresaClienteActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="rendaCliente">
+        <Component class="javax.swing.JFormattedTextField" name="tfRendaCliente">
           <Properties>
             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
               <Format format="&#xa4; #,##0.00" subtype="-1" type="4"/>
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="codigoCliente">
+        <Component class="javax.swing.JFormattedTextField" name="tfCodigoCliente">
           <Properties>
             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
               <Format format="##########" subtype="-1" type="0"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="codigoClienteActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfCodigoClienteActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="telefoneCliente">
+        <Component class="javax.swing.JFormattedTextField" name="tfTelefoneCliente">
           <Properties>
             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
               <Format format="(##) #####-####" subtype="-1" type="5"/>

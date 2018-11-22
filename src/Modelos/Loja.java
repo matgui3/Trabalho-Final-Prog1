@@ -100,7 +100,7 @@ public class Loja {
 
     }
 
-    private void lerPessoasArquivo() {
+    public void lerPessoasArquivo() {
         File arq = new File("C:/Users/guilh/Documents/GitKraken/Trabalho-Final-Prog1/ArquivoPessoasJava.txt");
         try{
             FileReader leitorArq = new FileReader(arq);
@@ -164,7 +164,7 @@ public class Loja {
 
     }
 
-    private void gravarPessoasArquivo(){
+    public void gravarPessoasArquivo(){
         File arq = new File("C:/Users/guilh/Documents/GitKraken/Trabalho-Final-Prog1/ArquivoPessoasJava.txt");
         try{
             FileWriter gravadorArq = new FileWriter(arq);
@@ -176,6 +176,7 @@ public class Loja {
             }
             gravadorTexto.close();
             gravadorArq.close();
+            JOptionPane.showMessageDialog(null, "Pessoa cadastrada com sucesso.");
         } catch(FileNotFoundException e){
             JOptionPane.showMessageDialog(null, "Arquivo não encontrado. Tente novamente.");
         } catch(IOException e){

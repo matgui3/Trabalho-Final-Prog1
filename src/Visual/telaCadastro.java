@@ -188,7 +188,7 @@ public class telaCadastro extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // verifica se tem algum jInternalFrame igual aberto
         if (verCliente == null) {
-            verCliente = new TelaCliente();
+            verCliente = new TelaCliente(loja);
         }
 // se não estiver visível ele adiciona ao jDP e torna visível
         if (!verCliente.isVisible()) {
