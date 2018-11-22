@@ -124,6 +124,9 @@ public class Loja {
                     String rg = valores[7];
                     String nomeDaMae = valores[8];
                     float salario = Float.parseFloat(valores[9]);
+                    char sexo = valores[10].charAt(0);
+                    String localTrabalho = valores[11];
+                    String nomeEmpresa = valores[12];
 
                     Cliente cliente = new Cliente();
 
@@ -136,6 +139,9 @@ public class Loja {
                     cliente.setRg(rg);
                     cliente.setNomeDaMae(nomeDaMae);
                     cliente.setSalario(salario);
+                    cliente.setSexo(sexo);
+                    cliente.setLocalTrabalho(localTrabalho);
+                    cliente.setNomeEmpresa(nomeEmpresa);
 
                     this.pessoas.add(cliente);
                 } else {

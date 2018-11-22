@@ -20,7 +20,8 @@ public class Cliente extends Pessoa{
     
     @Override
     public String toFileString() {
-        return "C;"+super.toFileString()+";"+this.cpf+";"+this.rg+";"+this.nomeDaMae+";"+this.sexo+";"+this.salario+";"+this.localTrabalho+";"+this.nomeEmpresa;
+        return "C;"+super.toFileString()+";"+this.cpf+";"+this.rg+";"+this.nomeDaMae+";"
+                +this.salario+";"+this.sexo+";"+this.localTrabalho+";"+this.nomeEmpresa;
     }
 
     /**
