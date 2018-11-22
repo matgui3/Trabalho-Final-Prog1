@@ -169,6 +169,10 @@ public class Loja {
         }
 
     }
+    
+    public void addPessoa(Pessoa pessoa){
+        pessoas.add(pessoa);
+    }
 
     public void gravarPessoasArquivo() {
         File arq = new File("C:/Users/guilh/Documents/GitKraken/Trabalho-Final-Prog1/ArquivoPessoasJava.txt");
@@ -178,27 +182,6 @@ public class Loja {
 
             for (Pessoa prod : pessoas) {
                 gravadorTexto.write(prod.toFileString());
-                gravadorTexto.newLine();
-            }
-            gravadorTexto.close();
-            gravadorArq.close();
-            JOptionPane.showMessageDialog(null, "Pessoa cadastrada com sucesso.");
-        } catch (FileNotFoundException e) {
-            JOptionPane.showMessageDialog(null, "Arquivo não encontrado. Tente novamente.");
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "Não foi possível gravar no arquivo. Tente novamente.");
-        }
-    }
-
-    public void gravarPessoasArquivo(Cliente cliente) {
-        File arq = new File("C:/Users/guilh/Documents/GitKraken/Trabalho-Final-Prog1/ArquivoPessoasJava.txt");
-        this.pessoas.add(cliente);
-        try {
-            FileWriter gravadorArq = new FileWriter(arq);
-            BufferedWriter gravadorTexto = new BufferedWriter(gravadorArq);
-
-            for (Pessoa pes : pessoas) {
-                gravadorTexto.write(pes.toFileString());
                 gravadorTexto.newLine();
             }
             gravadorTexto.close();

@@ -400,7 +400,6 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         } else {
             sexo = 'F';
         }
-        System.out.println("Passou no getSexo");
         String email = tfEmailCliente.getText();
         String telefone = tfTelefoneCliente.getText();
         String endereco = tfEndCliente.getText();
@@ -410,16 +409,11 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         String nomeDaMae = tfNomeMaeCliente.getText();
         String localTrabalho = tfLocalTrabCliente.getText();
         String nomeEmpresa = tfEmpresaCliente.getText();
-        System.out.println("Passou até a empresa");
         int codigo = Integer.parseInt(tfCodigoCliente.getText());
-        System.out.println("Passou no código");
         double salario = Double.parseDouble(tfRendaCliente.getText());
-        System.out.println("Passou no salário");
         
         //Criando o objeto pessoa e settando os valores.
-        System.out.println("Criando o objeto");
         Cliente cliente = new Cliente();
-        System.out.println("Criou essa merda");
         cliente.setCodigo(codigo);
         cliente.setCpf(cpf);
         cliente.setEmail(email);
@@ -432,9 +426,9 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         cliente.setTelefone(nome);
         cliente.setSalario(salario);
         cliente.setNomeEmpresa(nomeEmpresa);
-        System.out.println("Settou tudo essas droga");
         
-        loja.gravarPessoasArquivo(cliente);
+        loja.addPessoa(cliente);
+        loja.gravarPessoasArquivo();
         limparCampos();
     }//GEN-LAST:event_btSalvarClienteActionPerformed
 
