@@ -13,11 +13,14 @@ public class Cliente extends Pessoa{
     private String cpf;
     private String rg;
     private String nomeDaMae;
-    private float salario;
+    private char sexo;
+    private double salario;
+    private String localTrabalho;
+    private String nomeEmpresa;
     
     @Override
     public String toFileString() {
-        return "C;"+super.toFileString()+";"+this.cpf+";"+this.rg+";"+this.nomeDaMae+";"+this.salario;
+        return "C;"+super.toFileString()+";"+this.cpf+";"+this.rg+";"+this.nomeDaMae+";"+this.sexo+";"+this.salario+";"+this.localTrabalho+";"+this.nomeEmpresa;
     }
 
     /**
@@ -33,12 +36,28 @@ public class Cliente extends Pessoa{
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
+    
+    public void setNomeEmpresa(String nomeEmpresa){
+        this.nomeEmpresa = nomeEmpresa;
+    }
+    
+    /**
+     * 
+     * @param sexo  sexo do cliente.
+     */
+    public void setSexo(char sexo){
+        this.sexo=sexo;
+    }
 
     /**
      * @return the rg
      */
     public String getRg() {
         return rg;
+    }
+    
+    public void setLocalTrabalho(String localTrabalho){
+        this.localTrabalho=localTrabalho;
     }
 
     /**
@@ -65,14 +84,14 @@ public class Cliente extends Pessoa{
     /**
      * @return the salario
      */
-    public float getSalario() {
+    public double getSalario() {
         return salario;
     }
 
     /**
      * @param salario the salario to set
      */
-    public void setSalario(float salario) {
+    public void setSalario(double salario) {
         this.salario = salario;
     }
     

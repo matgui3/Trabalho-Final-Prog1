@@ -184,9 +184,9 @@ public class Loja {
         }
     }
 
-    public void gravarPessoasArquivo(Pessoa pessoa) {
+    public void gravarPessoasArquivo(Cliente cliente) {
         File arq = new File("C:/Users/guilh/Documents/GitKraken/Trabalho-Final-Prog1/ArquivoPessoasJava.txt");
-        pessoas.add(pessoa);
+        this.pessoas.add(cliente);
         try {
             FileWriter gravadorArq = new FileWriter(arq);
             BufferedWriter gravadorTexto = new BufferedWriter(gravadorArq);
