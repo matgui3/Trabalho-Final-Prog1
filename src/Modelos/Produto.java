@@ -77,7 +77,7 @@ public class Produto {
     }
 
     public String toFileString() {
-        return this.descricao+";"+this.precoCompra+";"+this.qtd+";"+this.codigo;
+        return this.descricao+";"+this.precoCompra+";"+this.qtd+";"+this.codigo+";"+this.precoVenda;
     }
     
 }

@@ -63,10 +63,10 @@
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="brSairProd" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="btQtdProd" min="-2" pref="68" max="-2" attributes="0"/>
-                                  <Component id="codigoProd" min="-2" pref="85" max="-2" attributes="0"/>
+                                  <Component id="tfQtdProd" min="-2" pref="68" max="-2" attributes="0"/>
+                                  <Component id="tfCodigoProd" min="-2" pref="85" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="btPrecoCompraProd" min="-2" pref="194" max="-2" attributes="0"/>
+                                      <Component id="tfPrecoCompraProd" min="-2" pref="194" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                       <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
@@ -77,7 +77,7 @@
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="btDescricaoProd" min="-2" pref="471" max="-2" attributes="0"/>
+                          <Component id="tfDescricaoProd" min="-2" pref="471" max="-2" attributes="0"/>
                           <EmptySpace pref="46" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -95,26 +95,26 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btDescricaoProd" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfDescricaoProd" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btPrecoCompraProd" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfPrecoCompraProd" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="tfPercLucro" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btQtdProd" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfQtdProd" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="82" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="codigoProd" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfCodigoProd" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -163,18 +163,18 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="brSairProdActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="btDescricaoProd">
+        <Component class="javax.swing.JTextField" name="tfDescricaoProd">
         </Component>
-        <Component class="javax.swing.JTextField" name="btQtdProd">
+        <Component class="javax.swing.JTextField" name="tfQtdProd">
         </Component>
-        <Component class="javax.swing.JTextField" name="codigoProd">
+        <Component class="javax.swing.JTextField" name="tfCodigoProd">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
             <Property name="text" type="java.lang.String" value="Pre&#xe7;o de Compra:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="btPrecoCompraProd">
+        <Component class="javax.swing.JFormattedTextField" name="tfPrecoCompraProd">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel9">
           <Properties>

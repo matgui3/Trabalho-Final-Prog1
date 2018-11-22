@@ -1,7 +1,5 @@
 package Visual;
 
-
-
 import Modelos.Loja;
 import Modelos.Produto;
 import java.awt.Dimension;
@@ -16,14 +14,12 @@ import javax.swing.JOptionPane;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Rodrigo
  */
 public class TelaCadastroProduto extends javax.swing.JInternalFrame {
-    
-    
+
     private Produto prod = new Produto();
     private Loja loja;
 
@@ -51,11 +47,11 @@ public class TelaCadastroProduto extends javax.swing.JInternalFrame {
         jLabel7 = new javax.swing.JLabel();
         btSalvarProd = new javax.swing.JButton();
         brSairProd = new javax.swing.JButton();
-        btDescricaoProd = new javax.swing.JTextField();
-        btQtdProd = new javax.swing.JTextField();
-        codigoProd = new javax.swing.JTextField();
+        tfDescricaoProd = new javax.swing.JTextField();
+        tfQtdProd = new javax.swing.JTextField();
+        tfCodigoProd = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        btPrecoCompraProd = new javax.swing.JFormattedTextField();
+        tfPrecoCompraProd = new javax.swing.JFormattedTextField();
         jLabel9 = new javax.swing.JLabel();
         tfPercLucro = new javax.swing.JFormattedTextField();
 
@@ -124,17 +120,17 @@ public class TelaCadastroProduto extends javax.swing.JInternalFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(brSairProd)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(btQtdProd, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(codigoProd, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tfQtdProd, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tfCodigoProd, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(btPrecoCompraProd, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tfPrecoCompraProd, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(32, 32, 32)
                                     .addComponent(jLabel9)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(tfPercLucro, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btDescricaoProd, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tfDescricaoProd, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(46, Short.MAX_VALUE))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(86, 86, 86)
@@ -147,23 +143,23 @@ public class TelaCadastroProduto extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(btDescricaoProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfDescricaoProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(btPrecoCompraProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfPrecoCompraProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9)
                     .addComponent(tfPercLucro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(btQtdProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfQtdProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(codigoProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfCodigoProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btSalvarProd)
@@ -186,19 +182,15 @@ public class TelaCadastroProduto extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btSalvarProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarProdActionPerformed
-        prod.setDescricao(btDescricaoProd.getText());
-        float precoCompra = Float.parseFloat(btPrecoCompraProd.getText());
+        prod.setDescricao(tfDescricaoProd.getText());
+        float precoCompra = Float.parseFloat(tfPrecoCompraProd.getText().replace(",", "."));
         prod.setPrecoCompra(precoCompra);
-        prod.setQtd(Integer.parseInt(btQtdProd.getText()));
-        prod.setCodigo(Integer.parseInt(codigoProd.getText()));
-        prod.setPrecoVenda((Float.parseFloat(tfPercLucro.getText())*precoCompra)+precoCompra);
+        prod.setQtd(Integer.parseInt(tfQtdProd.getText()));
+        prod.setCodigo(Integer.parseInt(tfCodigoProd.getText()));
+        prod.setPrecoVenda((Float.parseFloat(tfPercLucro.getText()) * precoCompra) + precoCompra);
         this.loja.addProdutos(prod);
-        try {
-            loja.gravarProdutoArquivo();
-            JOptionPane.showMessageDialog(null, "Produto cadastrado com sucesso.");
-        } catch (IOException ex) {
-            JOptionPane.showMessageDialog(null, "Produto não pôde ser cadastrado.");
-        }
+        loja.gravarProdutoArquivo();
+        JOptionPane.showMessageDialog(null, "Produto cadastrado com sucesso.");
     }//GEN-LAST:event_btSalvarProdActionPerformed
 
     private void brSairProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brSairProdActionPerformed
@@ -206,21 +198,17 @@ public class TelaCadastroProduto extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_brSairProdActionPerformed
 
     private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
-         try {
-                this.setMaximum(true);
-            } catch (PropertyVetoException ex) {
-                Logger.getLogger(telaCadastro.class.getName()).log(Level.SEVERE, null, ex);
-            }
+        try {
+            this.setMaximum(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(telaCadastro.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_formInternalFrameOpened
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton brSairProd;
-    private javax.swing.JTextField btDescricaoProd;
-    private javax.swing.JFormattedTextField btPrecoCompraProd;
-    private javax.swing.JTextField btQtdProd;
     private javax.swing.JButton btSalvarProd;
-    private javax.swing.JTextField codigoProd;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -228,11 +216,15 @@ public class TelaCadastroProduto extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField tfCodigoProd;
+    private javax.swing.JTextField tfDescricaoProd;
     private javax.swing.JFormattedTextField tfPercLucro;
+    private javax.swing.JFormattedTextField tfPrecoCompraProd;
+    private javax.swing.JTextField tfQtdProd;
     // End of variables declaration//GEN-END:variables
     void setPosicao() {
         //seta a posição cetral ao abrir uma janela
         Dimension d = this.getDesktopPane().getSize();
-        this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height)/ 2);
+        this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2);
     }
 }

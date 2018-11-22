@@ -39,13 +39,13 @@ public class Loja {
         this.produtos.add(prod);
     }
 
-    public void cadastrarProdutos() throws IOException {
+    public void cadastrarProdutos() {
         gravarProdutoArquivo();
         gravarPessoasArquivo();
     }
 
-    public void gravarProdutoArquivo() throws IOException {
         File arq = new File("C:/ArquivoProdutosJava.txt");
+    public void gravarProdutoArquivo() {
         try {
             FileWriter gravadorArq = new FileWriter(arq);
             BufferedWriter gravadorTexto = new BufferedWriter(gravadorArq);
@@ -79,13 +79,15 @@ public class Loja {
                 float precoCompra = Float.parseFloat(valores[1]);
                 int qtd = Integer.parseInt(valores[2]);
                 int codigo = Integer.parseInt(valores[3]);
-
+                float precoVenda = Float.parseFloat(valores[4]);
+                
                 Produto prod = new Produto();
 
                 prod.setDescricao(descricao);
                 prod.setPrecoCompra(precoCompra);
                 prod.setQtd(qtd);
                 prod.setCodigo(codigo);
+                prod.setPrecoVenda(precoVenda);
                 this.produtos.add(prod);
 
                 linha = leitorTexto.readLine();
