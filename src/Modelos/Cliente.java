@@ -16,8 +16,8 @@ public class Cliente extends Pessoa{
     private float salario;
     
     @Override
-    public String fileToString() {
-        return "C;"+super.fileToString()+";"+this.cpf+";"+this.rg+";"+this.nomeDaMae+";"+this.salario;
+    public String toFileString() {
+        return "C;"+super.toFileString()+";"+this.cpf+";"+this.rg+";"+this.nomeDaMae+";"+this.salario;
     }
 
     /**

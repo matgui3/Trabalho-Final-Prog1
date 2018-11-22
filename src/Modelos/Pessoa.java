@@ -16,7 +16,7 @@ public class Pessoa {
     private String email;
     private int codigo;
     
-    public String fileToString() {
+    public String toFileString() {
         return this.nome+";"+this.endereco+";"+this.telefone+";"+this.email+";"+this.codigo;
     }
 

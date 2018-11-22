@@ -2,6 +2,7 @@ package Visual;
 
 
 import Modelos.Loja;
+import Modelos.Pessoa;
 import java.awt.Dimension;
 import static java.awt.Frame.MAXIMIZED_BOTH;
 import java.beans.PropertyVetoException;
@@ -28,7 +29,6 @@ public class TelaCliente extends javax.swing.JInternalFrame {
     public TelaCliente(Loja loja) {
         initComponents();
         this.loja = loja;
-        loja.lerPessoasArquivo();
     }
 
     /**
@@ -399,6 +399,8 @@ public class TelaCliente extends javax.swing.JInternalFrame {
 
     private void btSalvarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarClienteActionPerformed
         // TODO add your handling code here:
+        String nome = tfNomeCliente.getText();
+        
         loja.gravarPessoasArquivo();
         limparCampos();
     }//GEN-LAST:event_btSalvarClienteActionPerformed

@@ -10,12 +10,12 @@ package Modelos;
  * @author Rodrigo
  */
 public class Fornecedor extends Pessoa {
-    
+
     private String cnpj;
-    
-        @Override
-    public String fileToString() {
-        return "F;"+super.fileToString()+";"+this.cnpj;
+
+    @Override
+    public String toFileString() {
+        return "F;" + super.toFileString() + ";" + this.cnpj;
     }
 
     /**
@@ -31,7 +31,5 @@ public class Fornecedor extends Pessoa {
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
-    
-    
-    
+
 }

@@ -71,7 +71,7 @@ public class Produto {
         this.codigo = codigo;
     }
 
-    public String fileToString() {
+    public String toFileString() {
         return this.descricao+";"+this.precoCompra+";"+this.qtd+";"+this.codigo;
     }
     
