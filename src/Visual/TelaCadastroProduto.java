@@ -22,6 +22,8 @@ public class TelaCadastroProduto extends javax.swing.JInternalFrame {
 
     private Produto prod = new Produto();
     private Loja loja;
+    private boolean testeCodProduto;
+    private float precoVenda;
 
     /**
      * Creates new form TelaCadastroProduto
@@ -59,12 +61,6 @@ public class TelaCadastroProduto extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setFrameIcon(null);
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
-            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
-            }
-            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
-            }
-            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
-            }
             public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
             }
             public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
@@ -73,6 +69,12 @@ public class TelaCadastroProduto extends javax.swing.JInternalFrame {
             }
             public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
                 formInternalFrameOpened(evt);
+            }
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
             }
         });
 
@@ -187,10 +189,17 @@ public class TelaCadastroProduto extends javax.swing.JInternalFrame {
         prod.setPrecoCompra(precoCompra);
         prod.setQtd(Integer.parseInt(tfQtdProd.getText()));
         prod.setCodigo(Integer.parseInt(tfCodigoProd.getText()));
-        prod.setPrecoVenda((Float.parseFloat(tfPercLucro.getText()) * precoCompra) + precoCompra);
-        this.loja.addProdutos(prod);
-        loja.gravarProdutoArquivo();
-        JOptionPane.showMessageDialog(null, "Produto cadastrado com sucesso.");
+        float percLucro = Float.parseFloat(tfPercLucro.getText());
+        precoVenda = (((Float.parseFloat(tfPercLucro.getText()) / 100) * precoCompra) + precoCompra);
+        prod.setPrecoVenda(precoVenda);
+        testeCodProduto = this.loja.addProdutos(prod);
+        if (testeCodProduto) {
+            loja.gravarProdutoArquivo();
+            JOptionPane.showMessageDialog(null, "Produto cadastrado com sucesso. \nPreço de venda do produto: R$" + precoVenda);
+            limparCampos();
+        }
+        testeCodProduto = true;
+        
     }//GEN-LAST:event_btSalvarProdActionPerformed
 
     private void brSairProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brSairProdActionPerformed
@@ -226,5 +235,13 @@ public class TelaCadastroProduto extends javax.swing.JInternalFrame {
         //seta a posição cetral ao abrir uma janela
         Dimension d = this.getDesktopPane().getSize();
         this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2);
+    }
+    
+    public void limparCampos(){
+        tfCodigoProd.setText(null);
+        tfDescricaoProd.setText(null);
+        tfPercLucro.setText(null);
+        tfPrecoCompraProd.setText(null);
+        tfQtdProd.setText(null);
     }
 }

@@ -35,8 +35,15 @@ public class Loja {
         lerProdutosArquivo();
     }
 
-    public void addProdutos(Produto prod) {
+    public boolean addProdutos(Produto prod) {
+        for(Produto produto : produtos){
+            if(produto.getCodigo() == prod.getCodigo()){
+                JOptionPane.showMessageDialog(null, "Já existe um produto com o código inserido. Tente novamente.");
+                return false;
+            }
+        }
         this.produtos.add(prod);
+        return true;
     }
 
     public void cadastrarProdutos() {
@@ -44,8 +51,8 @@ public class Loja {
         gravarPessoasArquivo();
     }
 
-        File arq = new File("C:/ArquivoProdutosJava.txt");
     public void gravarProdutoArquivo() {
+        File arq = new File("C:/ArquivoProdutosJava.txt");
         try {
             FileWriter gravadorArq = new FileWriter(arq);
             BufferedWriter gravadorTexto = new BufferedWriter(gravadorArq);
