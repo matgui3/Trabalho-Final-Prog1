@@ -34,6 +34,10 @@ public class Loja {
         lerPessoasArquivo();
         lerProdutosArquivo();
     }
+    
+    public ArrayList<Produto> getProdutos(){
+        return this.produtos;
+    }
 
     public boolean addProdutos(Produto prod) {
         for(Produto produto : produtos){

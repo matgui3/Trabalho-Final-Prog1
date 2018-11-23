@@ -22,6 +22,10 @@ public class Produto {
     public String getDescricao() {
         return descricao;
     }
+
+    public float getPrecoVenda() {
+        return precoVenda;
+    }
     
     public void setPrecoVenda(float precoVenda){
         this.precoVenda = precoVenda;

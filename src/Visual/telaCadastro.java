@@ -47,7 +47,7 @@ public class telaCadastro extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu3 = new javax.swing.JMenu();
+        optionVender = new javax.swing.JMenu();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -84,18 +84,18 @@ public class telaCadastro extends javax.swing.JFrame {
             .addComponent(jDesktopPane1)
         );
 
-        jMenu3.setText("Vender");
-        jMenu3.addMouseListener(new java.awt.event.MouseAdapter() {
+        optionVender.setText("Vender");
+        optionVender.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu3MouseClicked(evt);
+                optionVenderMouseClicked(evt);
             }
         });
-        jMenu3.addActionListener(new java.awt.event.ActionListener() {
+        optionVender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu3ActionPerformed(evt);
+                optionVenderActionPerformed(evt);
             }
         });
-        jMenuBar1.add(jMenu3);
+        jMenuBar1.add(optionVender);
 
         jMenu1.setText("Cadastro");
         jMenu1.addActionListener(new java.awt.event.ActionListener() {
@@ -246,11 +246,11 @@ public class telaCadastro extends javax.swing.JFrame {
         verFuncionario.toFront();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
-    private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu3ActionPerformed
+    private void optionVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionVenderActionPerformed
 
-    }//GEN-LAST:event_jMenu3ActionPerformed
+    }//GEN-LAST:event_optionVenderActionPerformed
 
-    private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
+    private void optionVenderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_optionVenderMouseClicked
         // verifica se tem algum jInternalFrame igual aberto
         if (verVenda == null) {
             verVenda = new TelaVenda(loja);
@@ -264,7 +264,7 @@ public class telaCadastro extends javax.swing.JFrame {
         }
         verVenda.toFront();
 
-    }//GEN-LAST:event_jMenu3MouseClicked
+    }//GEN-LAST:event_optionVenderMouseClicked
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
 
@@ -324,7 +324,6 @@ public class telaCadastro extends javax.swing.JFrame {
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
@@ -335,5 +334,6 @@ public class telaCadastro extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenu optionVender;
     // End of variables declaration//GEN-END:variables
 }

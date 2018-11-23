@@ -1,19 +1,21 @@
 package Visual;
 
-
 import Modelos.Loja;
+import Modelos.Produto;
 import java.awt.Dimension;
 import java.beans.PropertyVetoException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Rodrigo
@@ -21,14 +23,20 @@ import java.util.logging.Logger;
 public class TelaVenda extends javax.swing.JInternalFrame {
 
     Loja loja;
-    
+    ArrayList<Produto> produtos;
+    DefaultTableModel tbModelo;
+
     /**
      * Creates new form TelaVenda
      */
-    public TelaVenda(Loja loja){
+    public TelaVenda(Loja loja) {
         initComponents();
         this.loja = loja;
-        this.loja.lerProdutosArquivo();
+        produtos = loja.getProdutos();
+        tbModelo = new DefaultTableModel();
+        tbModelo.setColumnCount(5);
+        tbModelo.setColumnIdentifiers(new String[]{"Produto", "Descrição", "Quantidade", "Preço Unitário", "Sub-Total"});
+        tbProdutosPedido.setModel(tbModelo);
     }
 
     /**
@@ -42,7 +50,7 @@ public class TelaVenda extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        tfQtd = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         tfCodeProduto = new javax.swing.JTextField();
         btAddProd = new javax.swing.JButton();
@@ -50,7 +58,7 @@ public class TelaVenda extends javax.swing.JInternalFrame {
         jFormattedTextField1 = new javax.swing.JFormattedTextField();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tbProdutosPedido = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
@@ -69,12 +77,6 @@ public class TelaVenda extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setFrameIcon(null);
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
-            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
-            }
-            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
-            }
-            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
-            }
             public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
             }
             public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
@@ -83,6 +85,12 @@ public class TelaVenda extends javax.swing.JInternalFrame {
             }
             public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
                 formInternalFrameOpened(evt);
+            }
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
             }
         });
 
@@ -120,7 +128,7 @@ public class TelaVenda extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tfQtd, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(126, 126, 126)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -140,13 +148,13 @@ public class TelaVenda extends javax.swing.JInternalFrame {
                         .addComponent(jLabel2)
                         .addComponent(tfCodeProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel1)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(tfQtd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btAddProd, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTable2.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tbProdutosPedido.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+        tbProdutosPedido.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -162,8 +170,8 @@ public class TelaVenda extends javax.swing.JInternalFrame {
                 return types [columnIndex];
             }
         });
-        jTable2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jScrollPane2.setViewportView(jTable2);
+        tbProdutosPedido.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jScrollPane2.setViewportView(tbProdutosPedido);
 
         jLabel5.setText("Cliente (Opcional):");
 
@@ -319,15 +327,31 @@ public class TelaVenda extends javax.swing.JInternalFrame {
 
     private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
         try {
-                this.setMaximum(true);
-            } catch (PropertyVetoException ex) {
-                Logger.getLogger(telaCadastro.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            this.setMaximum(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(telaCadastro.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_formInternalFrameOpened
 
     private void btAddProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAddProdActionPerformed
         // TODO add your handling code here:
-        // Inserir a Loja como parâmetro do construtor para poder ler os produtos cadastrados?
+        int codigo = Integer.parseInt(tfCodeProduto.getText());
+        int qtd;
+        for (Produto prod : produtos) {
+            if (prod.getCodigo() == codigo) {
+                qtd = Integer.parseInt(tfQtd.getText());
+                System.out.println("Encontrei o produto");
+
+                if (qtd > prod.getQtd()) {
+                    JOptionPane.showMessageDialog(null, "Quantidade desejada maior do que a disponível em estoque.");
+                } else {
+                    System.out.println("Adicionei a linha.");
+                    inserirLinha(prod, qtd);
+                }
+                break;
+            }
+        }
+        System.out.println("Não encontrei o produto");
     }//GEN-LAST:event_btAddProdActionPerformed
 
 
@@ -352,15 +376,20 @@ public class TelaVenda extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JTable tbProdutosPedido;
     private javax.swing.JTextField tfCodeProduto;
+    private javax.swing.JTextField tfQtd;
     // End of variables declaration//GEN-END:variables
 
     void setPosicao() {
         //seta a posição cetral ao abrir uma janela
         Dimension d = this.getDesktopPane().getSize();
-        this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height)/ 2);
+        this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2);
+    }
+
+    private void inserirLinha(Produto prod, int qtd) {
+        tbModelo.addRow(new Object[]{prod.getCodigo(), prod.getDescricao(), qtd, prod.getPrecoVenda(), (prod.getPrecoVenda() * qtd)});
+        tbProdutosPedido.setModel(tbModelo);
     }
 }
