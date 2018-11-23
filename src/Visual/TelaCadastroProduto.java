@@ -24,6 +24,7 @@ public class TelaCadastroProduto extends javax.swing.JInternalFrame {
     private Loja loja;
     private boolean testeCodProduto;
     private float precoVenda;
+    private float percLucro;
 
     /**
      * Creates new form TelaCadastroProduto
@@ -189,13 +190,17 @@ public class TelaCadastroProduto extends javax.swing.JInternalFrame {
         prod.setPrecoCompra(precoCompra);
         prod.setQtd(Integer.parseInt(tfQtdProd.getText()));
         prod.setCodigo(Integer.parseInt(tfCodigoProd.getText()));
-        float percLucro = Float.parseFloat(tfPercLucro.getText());
-        precoVenda = (((Float.parseFloat(tfPercLucro.getText()) / 100) * precoCompra) + precoCompra);
+        // Configurando a entrada do percentual de lucro e guardando como float.
+        String textoPercLucro = tfPercLucro.getText().replace("%","");
+        textoPercLucro = textoPercLucro.replace(",", ".");
+        percLucro = Float.parseFloat(textoPercLucro);
+        // Calculando o preço de venda do produto e adicionando ao arquivo.
+        precoVenda = (((percLucro / 100) * precoCompra) + precoCompra);
         prod.setPrecoVenda(precoVenda);
         testeCodProduto = this.loja.addProdutos(prod);
         if (testeCodProduto) {
             loja.gravarProdutoArquivo();
-            JOptionPane.showMessageDialog(null, "Produto cadastrado com sucesso. \nPreço de venda do produto: R$" + precoVenda);
+            JOptionPane.showMessageDialog(null, "Produto cadastrado com sucesso. \nPreço de venda do produto: R$" + String.format("%.2f" , precoVenda));
             limparCampos();
         }
         testeCodProduto = true;
