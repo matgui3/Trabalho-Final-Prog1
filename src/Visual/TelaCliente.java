@@ -76,7 +76,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         tfTelefoneCliente = new javax.swing.JFormattedTextField();
         tfRendaCliente = new javax.swing.JTextField();
 
-        setBorder(javax.swing.BorderFactory.createTitledBorder("Cadastro Cliente"));
+        setBorder(javax.swing.BorderFactory.createTitledBorder("Cadastrar Cliente"));
         setClosable(true);
         setMaximizable(true);
         setFrameIcon(null);
@@ -274,7 +274,6 @@ public class TelaCliente extends javax.swing.JInternalFrame {
                                             .addComponent(jLabel14)
                                             .addComponent(jLabel13))
                                         .addGap(36, 36, 36)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(tfNascimentoCliente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
