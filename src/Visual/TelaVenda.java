@@ -419,7 +419,7 @@ public class TelaVenda extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         if (ftfValorRecebito.getText() == null || Float.parseFloat(ftfValorRecebito.getText().replace(",", ".")) <= Float.parseFloat(lbTotal.getText().replace(",", "."))) {
 //        if (ftfValorRecebito.getText() == null || ftfValorRecebito.getText() != null) {
-            lbTroco.setText("10.00");
+            lbTroco.setText("0.00");
         } else {
             lbTroco.setText(String.format("%.2f", (Float.parseFloat(ftfValorRecebito.getText().replace(",", ".")) - Float.parseFloat(lbTotal.getText().replace(",", ".")))));
         }
