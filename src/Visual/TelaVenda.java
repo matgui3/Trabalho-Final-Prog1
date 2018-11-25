@@ -37,6 +37,9 @@ public class TelaVenda extends javax.swing.JInternalFrame {
         tbModelo.setColumnCount(5);
         tbModelo.setColumnIdentifiers(new String[]{"Produto", "Descrição", "Quantidade", "Preço Unitário", "Sub-Total"});
         tbProdutosPedido.setModel(tbModelo);
+        lbTotal.setText("0.00");
+        lbValorRecebido.setText("R$ 0,00");
+        lbTroco.setText("R$ 0,00");
     }
 
     /**
@@ -67,16 +70,22 @@ public class TelaVenda extends javax.swing.JInternalFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        btCancelar = new javax.swing.JButton();
         btFinalizarVenda = new javax.swing.JButton();
-        jLabelTroco = new javax.swing.JLabel();
-        jLabelTotal = new javax.swing.JLabel();
-        jLabelValorReceb = new javax.swing.JLabel();
+        lbTroco = new javax.swing.JLabel();
+        lbTotal = new javax.swing.JLabel();
+        lbValorRecebido = new javax.swing.JLabel();
 
         setClosable(true);
         setMaximizable(true);
         setFrameIcon(null);
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
+            }
             public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
             }
             public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
@@ -85,12 +94,6 @@ public class TelaVenda extends javax.swing.JInternalFrame {
             }
             public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
                 formInternalFrameOpened(evt);
-            }
-            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
-            }
-            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
-            }
-            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
             }
         });
 
@@ -196,22 +199,27 @@ public class TelaVenda extends javax.swing.JInternalFrame {
 
         jLabel9.setText("Valor Recebido:");
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/delete.png"))); // NOI18N
-        jButton2.setText("Cancelar Venda:");
-        jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/delete.png"))); // NOI18N
+        btCancelar.setText("Cancelar Venda:");
+        btCancelar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCancelarActionPerformed(evt);
+            }
+        });
 
         btFinalizarVenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Ok.png"))); // NOI18N
         btFinalizarVenda.setText("Finalizar");
         btFinalizarVenda.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabelTroco.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabelTroco.setText("0.00");
+        lbTroco.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lbTroco.setText("0.00");
 
-        jLabelTotal.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabelTotal.setText("0.00");
+        lbTotal.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lbTotal.setText("0.00");
 
-        jLabelValorReceb.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabelValorReceb.setText("0.00");
+        lbValorRecebido.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lbValorRecebido.setText("0.00");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -231,7 +239,7 @@ public class TelaVenda extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 548, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(34, 34, 34)
                         .addComponent(btFinalizarVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -241,9 +249,9 @@ public class TelaVenda extends javax.swing.JInternalFrame {
                             .addComponent(jLabel8))
                         .addGap(87, 87, 87)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelValorReceb)
-                            .addComponent(jLabelTroco)
-                            .addComponent(jLabelTotal))))
+                            .addComponent(lbValorRecebido)
+                            .addComponent(lbTroco)
+                            .addComponent(lbTotal))))
                 .addGap(98, 98, 98))
         );
         jPanel3Layout.setVerticalGroup(
@@ -257,21 +265,21 @@ public class TelaVenda extends javax.swing.JInternalFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2)
+                    .addComponent(btCancelar)
                     .addComponent(btFinalizarVenda))
                 .addGap(21, 21, 21))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(37, 37, 37)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelTotal)
+                    .addComponent(lbTotal)
                     .addComponent(jLabel7))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelValorReceb)
+                    .addComponent(lbValorRecebido)
                     .addComponent(jLabel9))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelTroco)
+                    .addComponent(lbTroco)
                     .addComponent(jLabel8))
                 .addContainerGap(82, Short.MAX_VALUE))
         );
@@ -337,28 +345,55 @@ public class TelaVenda extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         int codigo = Integer.parseInt(tfCodeProduto.getText());
         int qtd;
+        float somaTotal=0;
+        boolean encontrou = false;
         for (Produto prod : produtos) {
             if (prod.getCodigo() == codigo) {
                 qtd = Integer.parseInt(tfQtd.getText());
-                System.out.println("Encontrei o produto");
+                encontrou = true;
 
                 if (qtd > prod.getQtd()) {
                     JOptionPane.showMessageDialog(null, "Quantidade desejada maior do que a disponível em estoque.");
                 } else {
-                    System.out.println("Adicionei a linha.");
                     inserirLinha(prod, qtd);
+                    prod.setQtd((prod.getQtd() - qtd));
+                    somaTotal+=prod.getPrecoVenda()*qtd;
+                    lbTotal.setText(String.format("%.2f", Float.parseFloat(lbTotal.getText().replace(",", ".")) + somaTotal));
                 }
                 break;
             }
         }
-        System.out.println("Não encontrei o produto");
+        if(!encontrou){
+            JOptionPane.showMessageDialog(null, "Produto não encontrado. Informe um código válido.");
+        }
     }//GEN-LAST:event_btAddProdActionPerformed
+
+    private void btCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarActionPerformed
+        // TODO add your handling code here:
+        
+        int cancelar = JOptionPane.showConfirmDialog(null, "Deseja cancelar a venda?", "Cancelar", JOptionPane.YES_NO_OPTION);
+        if (cancelar == 0) {
+            for(int i=0; i<tbModelo.getRowCount(); i++){
+                String textoCodigo = String.valueOf(tbProdutosPedido.getValueAt(i, 0));
+                int codigo = Integer.parseInt(textoCodigo);
+                for(Produto prod : produtos){
+                    if(prod.getCodigo()==codigo){
+                        prod.setQtd(prod.getQtd() + Integer.parseInt(String.valueOf(tbProdutosPedido.getValueAt(i, 2))));
+                    }
+                }
+            }
+            JOptionPane.showMessageDialog(null, "Venda cancelada.");
+            lbTotal.setText("0.00");
+            removerLinhas();
+            
+        }
+    }//GEN-LAST:event_btCancelarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btAddProd;
+    private javax.swing.JButton btCancelar;
     private javax.swing.JButton btFinalizarVenda;
-    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
@@ -369,14 +404,14 @@ public class TelaVenda extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel jLabelTotal;
-    private javax.swing.JLabel jLabelTroco;
-    private javax.swing.JLabel jLabelValorReceb;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JLabel lbTotal;
+    private javax.swing.JLabel lbTroco;
+    private javax.swing.JLabel lbValorRecebido;
     private javax.swing.JTable tbProdutosPedido;
     private javax.swing.JTextField tfCodeProduto;
     private javax.swing.JTextField tfQtd;
@@ -390,6 +425,12 @@ public class TelaVenda extends javax.swing.JInternalFrame {
 
     private void inserirLinha(Produto prod, int qtd) {
         tbModelo.addRow(new Object[]{prod.getCodigo(), prod.getDescricao(), qtd, prod.getPrecoVenda(), (prod.getPrecoVenda() * qtd)});
-        tbProdutosPedido.setModel(tbModelo);
+//        tbProdutosPedido.setModel(tbModelo);
+    }
+    
+    private void removerLinhas(){
+        for(int i=0; i<tbModelo.getRowCount(); i++){
+            tbModelo.removeRow(i);            
+        }
     }
 }

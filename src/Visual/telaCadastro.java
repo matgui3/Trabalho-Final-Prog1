@@ -49,15 +49,15 @@ public class telaCadastro extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         optionVender = new javax.swing.JMenu();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
+        optCadCliente = new javax.swing.JMenuItem();
+        optCadFornecedor = new javax.swing.JMenuItem();
+        optCadFuncionario = new javax.swing.JMenuItem();
+        optCadProduto = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        optRelCompra = new javax.swing.JMenuItem();
+        optRelVenda = new javax.swing.JMenuItem();
+        menuAjuda = new javax.swing.JMenu();
+        optSair = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setExtendedState(6);
@@ -104,66 +104,66 @@ public class telaCadastro extends javax.swing.JFrame {
             }
         });
 
-        jMenuItem1.setText("Cliente");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        optCadCliente.setText("Cliente");
+        optCadCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                optCadClienteActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        jMenu1.add(optCadCliente);
 
-        jMenuItem2.setText("Fornecedor");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        optCadFornecedor.setText("Fornecedor");
+        optCadFornecedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                optCadFornecedorActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem2);
+        jMenu1.add(optCadFornecedor);
 
-        jMenuItem3.setText("Funcionario");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        optCadFuncionario.setText("Funcionario");
+        optCadFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                optCadFuncionarioActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem3);
+        jMenu1.add(optCadFuncionario);
 
-        jMenuItem7.setText("Produto");
-        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+        optCadProduto.setText("Produto");
+        optCadProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem7ActionPerformed(evt);
+                optCadProdutoActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem7);
+        jMenu1.add(optCadProduto);
 
         jMenuBar1.add(jMenu1);
 
         jMenu4.setText("Relatórios");
 
-        jMenuItem5.setText("Compras");
-        jMenu4.add(jMenuItem5);
+        optRelCompra.setText("Compras");
+        jMenu4.add(optRelCompra);
 
-        jMenuItem6.setText("Vendas");
-        jMenu4.add(jMenuItem6);
+        optRelVenda.setText("Vendas");
+        jMenu4.add(optRelVenda);
 
         jMenuBar1.add(jMenu4);
 
-        jMenu2.setText("Ajuda");
-        jMenu2.addActionListener(new java.awt.event.ActionListener() {
+        menuAjuda.setText("Ajuda");
+        menuAjuda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu2ActionPerformed(evt);
+                menuAjudaActionPerformed(evt);
             }
         });
 
-        jMenuItem4.setText("Sair");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        optSair.setText("Sair");
+        optSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                optSairActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem4);
+        menuAjuda.add(optSair);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(menuAjuda);
 
         setJMenuBar(jMenuBar1);
 
@@ -185,7 +185,7 @@ public class telaCadastro extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jMenu1ActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void optCadClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optCadClienteActionPerformed
         // verifica se tem algum jInternalFrame igual aberto
         if (verCliente == null) {
             verCliente = new TelaCliente(loja);
@@ -200,20 +200,20 @@ public class telaCadastro extends javax.swing.JFrame {
 
         verCliente.toFront();
 
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_optCadClienteActionPerformed
 
-    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
+    private void menuAjudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuAjudaActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_jMenu2ActionPerformed
+    }//GEN-LAST:event_menuAjudaActionPerformed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+    private void optSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optSairActionPerformed
         int sair = JOptionPane.showConfirmDialog(null, "Deseja sair?", "Sair", JOptionPane.YES_NO_OPTION);
         if (sair == 0) {
             System.exit(0);
         }
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
+    }//GEN-LAST:event_optSairActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void optCadFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optCadFornecedorActionPerformed
         // verifica se tem algum jInternalFrame igual aberto
         if (verFornecedor == null) {
             verFornecedor = new TelaFornecedor();
@@ -228,9 +228,9 @@ public class telaCadastro extends javax.swing.JFrame {
 
         verFornecedor.toFront();
 
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_optCadFornecedorActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void optCadFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optCadFuncionarioActionPerformed
         // verifica se tem algum jInternalFrame igual aberto
         if (verFuncionario == null) {
             verFuncionario = new TelaFuncionario();
@@ -244,7 +244,7 @@ public class telaCadastro extends javax.swing.JFrame {
 
         }
         verFuncionario.toFront();
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_optCadFuncionarioActionPerformed
 
     private void optionVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionVenderActionPerformed
 
@@ -266,7 +266,7 @@ public class telaCadastro extends javax.swing.JFrame {
 
     }//GEN-LAST:event_optionVenderMouseClicked
 
-    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+    private void optCadProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optCadProdutoActionPerformed
 
 // verifica se tem algum jInternalFrame igual aberto
         if (verProduto == null) {
@@ -283,7 +283,7 @@ public class telaCadastro extends javax.swing.JFrame {
         verProduto.toFront();
 
 
-    }//GEN-LAST:event_jMenuItem7ActionPerformed
+    }//GEN-LAST:event_optCadProdutoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -323,17 +323,17 @@ public class telaCadastro extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenu menuAjuda;
+    private javax.swing.JMenuItem optCadCliente;
+    private javax.swing.JMenuItem optCadFornecedor;
+    private javax.swing.JMenuItem optCadFuncionario;
+    private javax.swing.JMenuItem optCadProduto;
+    private javax.swing.JMenuItem optRelCompra;
+    private javax.swing.JMenuItem optRelVenda;
+    private javax.swing.JMenuItem optSair;
     private javax.swing.JMenu optionVender;
     // End of variables declaration//GEN-END:variables
 }
