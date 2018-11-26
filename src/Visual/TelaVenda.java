@@ -14,14 +14,9 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 /**
  *
- * @author Rodrigo
+ * @author Rodrigo e Guilherme
  */
 public class TelaVenda extends javax.swing.JInternalFrame {
 
@@ -390,7 +385,7 @@ public class TelaVenda extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         int codigo;
         int qtd;
-        if (tfQtd.getText().isEmpty()) {
+        if (tfQtd.getText().isEmpty() || Integer.parseInt(tfQtd.getText())==0) {
             qtd = -1;
         } else {
             qtd = Integer.parseInt(tfQtd.getText());
@@ -404,7 +399,7 @@ public class TelaVenda extends javax.swing.JInternalFrame {
         boolean encontrou = false;
         for (Produto prod : produtos) {
             if (prod.getCodigo() == codigo) {
-                if (tfQtd.getText().isEmpty()) {
+                if (qtd==-1) {
                     break;
                 }
                 encontrou = true;

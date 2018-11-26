@@ -1,20 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Modelos;
 
 /**
  *
- * @author Rodrigo
+ * @author Rodrigo e Guilherme
  */
 public class Produto {
     private String descricao;
     private float precoCompra;
+    private float precoVenda;
     private int qtd;
     private int codigo;
-    private float precoVenda;
 
     /**
      * @return the descricao
