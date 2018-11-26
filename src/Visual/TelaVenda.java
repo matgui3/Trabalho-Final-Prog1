@@ -21,7 +21,7 @@ import javax.swing.table.DefaultTableModel;
  * @author Rodrigo
  */
 public class TelaVenda extends javax.swing.JInternalFrame {
-
+    
     Loja loja;
     ArrayList<Produto> produtos;
     DefaultTableModel tbModelo;
@@ -377,22 +377,22 @@ public class TelaVenda extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         int codigo;
         int qtd = -1;
-        if(tfCodeProduto.getText()==null){
-            codigo=-1;
+        if (tfCodeProduto.getText() == null) {
+            codigo = -1;
         } else {
-        codigo = Integer.parseInt(tfCodeProduto.getText());
+            codigo = Integer.parseInt(tfCodeProduto.getText());
         }
         float somaTotal = 0;
         boolean encontrou = false;
         for (Produto prod : produtos) {
             if (prod.getCodigo() == codigo) {
-                if (tfQtd.getText() == "") {
+                if (tfQtd.getText() == null) {
                     break;
                 } else {
                     qtd = Integer.parseInt(tfQtd.getText());
                 }
                 encontrou = true;
-
+                
                 if (qtd > prod.getQtd()) {
                     JOptionPane.showMessageDialog(null, "Quantidade desejada maior do que a disponível em estoque.");
                 } else {
@@ -441,8 +441,11 @@ public class TelaVenda extends javax.swing.JInternalFrame {
             }
             JOptionPane.showMessageDialog(null, "Venda cancelada.");
             lbTotal.setText("0.00");
+            lbTroco.setText("0.00");
+            tfCodeProduto.setText("");
+            tfQtd.setText("");
             removerLinhas();
-
+            
         }
     }//GEN-LAST:event_btCancelarActionPerformed
 
@@ -494,17 +497,16 @@ public class TelaVenda extends javax.swing.JInternalFrame {
         Dimension d = this.getDesktopPane().getSize();
         this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2);
     }
-
+    
     private void inserirLinha(Produto prod, int qtd) {
         tbModelo.addRow(new Object[]{prod.getCodigo(), prod.getDescricao(), qtd, prod.getPrecoVenda(), (prod.getPrecoVenda() * qtd)});
 //        tbProdutosPedido.setModel(tbModelo);
     }
-
+    
     private void removerLinhas() {
         int linhas = tbModelo.getRowCount();
-        System.out.println(linhas);
-        for (int i = tbModelo.getRowCount() - 1; i > 0; i--) {
-            tbModelo.removeRow(i);
+        for (int i = linhas; i > 0; i--) {
+            tbModelo.removeRow(0);
         }
     }
 }
