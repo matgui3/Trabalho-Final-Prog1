@@ -500,7 +500,6 @@ public class TelaVenda extends javax.swing.JInternalFrame {
                         produtos.remove(prod);
                     }
                 }
-                System.out.println("Passou aqui");
                 loja.gravarProdutoArquivo();
                 JOptionPane.showMessageDialog(null, "Venda concluída.");
                 limparCampos();
