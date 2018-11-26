@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
  */
 public class TelaCadastroProduto extends javax.swing.JInternalFrame {
 
-    private Produto prod = new Produto();
+    private Produto prod;
     private Loja loja;
     private boolean testeCodProduto;
     private float precoVenda;
@@ -181,6 +181,7 @@ public class TelaCadastroProduto extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btSalvarProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarProdActionPerformed
+        prod = new Produto();
         prod.setDescricao(tfDescricaoProd.getText());
         float precoCompra = Float.parseFloat(tfPrecoCompraProd.getText().replace(",", "."));
         prod.setPrecoCompra(precoCompra);

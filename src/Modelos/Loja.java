@@ -1,4 +1,3 @@
-
 package Modelos;
 
 import java.io.BufferedReader;
@@ -30,14 +29,14 @@ public class Loja {
         lerPessoasArquivo();
         lerProdutosArquivo();
     }
-    
-    public ArrayList<Produto> getProdutos(){
+
+    public ArrayList<Produto> getProdutos() {
         return this.produtos;
     }
 
     public boolean addProdutos(Produto prod) {
-        for(Produto produto : produtos){
-            if(produto.getCodigo() == prod.getCodigo()){
+        for (Produto produto : produtos) {
+            if (produto.getCodigo() == prod.getCodigo()) {
                 JOptionPane.showMessageDialog(null, "Já existe um produto com o código inserido. Tente novamente.");
                 return false;
             }
@@ -73,7 +72,7 @@ public class Loja {
 
             String linha = leitorTexto.readLine();
 
-            while (linha != null) {
+            while (linha != null && linha.length() > 1) {
 
                 String[] valores = linha.split(";");
                 //ler String como Char
@@ -82,7 +81,7 @@ public class Loja {
                 int qtd = Integer.parseInt(valores[2]);
                 int codigo = Integer.parseInt(valores[3]);
                 float precoVenda = Float.parseFloat(valores[4]);
-                
+
                 Produto prod = new Produto();
 
                 prod.setDescricao(descricao);
@@ -91,13 +90,12 @@ public class Loja {
                 prod.setCodigo(codigo);
                 prod.setPrecoVenda(precoVenda);
                 this.produtos.add(prod);
-
                 linha = leitorTexto.readLine();
             }
             leitorTexto.close();
             leitorArq.close();
         } catch (FileNotFoundException e) {
-            JOptionPane.showMessageDialog(null, "Arquivo de produtos não encontrado. Crie C:/ArquivoProdutosJava.txt e Tente novamente.");
+            JOptionPane.showMessageDialog(null, "Arquivo de produtos não encontrado. Crie C:/ArquivoProdutosJava.txt e tente novamente.");
             System.exit(0);
         } catch (IOException e) {
             JOptionPane.showMessageDialog(null, "Impossível ler os produtos do arquivo. Tente novamente.");
@@ -175,8 +173,8 @@ public class Loja {
         }
 
     }
-    
-    public void addPessoa(Pessoa pessoa){
+
+    public void addPessoa(Pessoa pessoa) {
         pessoas.add(pessoa);
     }
 
