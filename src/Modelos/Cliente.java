@@ -1,7 +1,7 @@
 package Modelos;
 
 /**
- *
+ * Classe dos objetos de tipo Cliente.
  * @author Rodrigo e Guilherme
  */
 public class Cliente extends Pessoa{
@@ -27,12 +27,14 @@ public class Cliente extends Pessoa{
     }
 
     /**
-     * @param cpf the cpf to set
+     * @param cpf Guarda o valor na variável cpf.
      */
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
-    
+    /**
+     * @param nomeEmpresa Guarda o valor na variável nomeEmpresa.
+     */
     public void setNomeEmpresa(String nomeEmpresa){
         this.nomeEmpresa = nomeEmpresa;
     }
@@ -46,7 +48,7 @@ public class Cliente extends Pessoa{
     }
 
     /**
-     * @return the rg
+     * @return retorna o valor do rg.
      */
     public String getRg() {
         return rg;

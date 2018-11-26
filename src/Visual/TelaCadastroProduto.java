@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * Classe com a tela do cadastro de produtos.
  * @author Rodrigo e Guilherme
  */
 public class TelaCadastroProduto extends javax.swing.JInternalFrame {
@@ -22,7 +22,8 @@ public class TelaCadastroProduto extends javax.swing.JInternalFrame {
     private float percLucro;
 
     /**
-     * Creates new form TelaCadastroProduto
+     * Cria a tela de cadastro de produtos.
+     * @param loja recebe o objeto Loja.
      */
     public TelaCadastroProduto(Loja loja) {
         initComponents();
@@ -180,6 +181,11 @@ public class TelaCadastroProduto extends javax.swing.JInternalFrame {
         setBounds(0, 0, 644, 349);
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    /**
+     * Salva os produtos adicionando-os no arquivo de produtos.
+     * @param evt click do mouse no botão Salvar.
+     */
     private void btSalvarProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarProdActionPerformed
         prod = new Produto();
         prod.setDescricao(tfDescricaoProd.getText());
@@ -204,6 +210,10 @@ public class TelaCadastroProduto extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_btSalvarProdActionPerformed
 
+    /**
+     * Sai da tela de cadastro de produtos.
+     * @param evt  click do mouse no botão Sair.
+     */
     private void brSairProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brSairProdActionPerformed
         dispose();
     }//GEN-LAST:event_brSairProdActionPerformed
@@ -239,6 +249,9 @@ public class TelaCadastroProduto extends javax.swing.JInternalFrame {
         this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2);
     }
     
+    /**
+     * Limpa os campos do formulário na tela.
+     */
     public void limparCampos(){
         tfCodigoProd.setText(null);
         tfDescricaoProd.setText(null);

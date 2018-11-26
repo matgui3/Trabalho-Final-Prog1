@@ -1,7 +1,7 @@
 package Modelos;
 
 /**
- *
+ * Classe que cria os produtos do projeto.
  * @author Rodrigo e Guilherme
  */
 public class Produto {

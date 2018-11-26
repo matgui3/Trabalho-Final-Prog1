@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
- *
+ * Tela de vendas do sistema.
  * @author Rodrigo e Guilherme
  */
 public class TelaVenda extends javax.swing.JInternalFrame {
@@ -25,7 +25,7 @@ public class TelaVenda extends javax.swing.JInternalFrame {
     DefaultTableModel tbModelo;
 
     /**
-     * Creates new form TelaVenda
+     * Cria a tela de vendas.
      */
     public TelaVenda(Loja loja) {
         initComponents();
@@ -381,6 +381,10 @@ public class TelaVenda extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_formInternalFrameOpened
 
+    /**
+     * Adiciona o produto na tabela de produtos para venda.
+     * @param evt click do mouse no botão Adicionar.
+     */
     private void btAddProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAddProdActionPerformed
         // TODO add your handling code here:
         int codigo;
@@ -410,11 +414,15 @@ public class TelaVenda extends javax.swing.JInternalFrame {
                     inserirLinha(prod, qtd);
                     prod.setQtd((prod.getQtd() - qtd));
                     somaTotal += prod.getPrecoVenda() * qtd;
+                    // Formatando o texto a ser mostrado no preço total.
                     lbTotal.setText(String.format("%.2f", Float.parseFloat(lbTotal.getText().replace(",", ".")) + somaTotal));
                 }
                 break;
             }
         }
+        /**
+         * Verifica se o campo de código ou o de quantidade está vazio, e se o produto foi ou não encontrado.
+         */
         if (codigo == -1) {
             JOptionPane.showMessageDialog(null, "Informe um código de produto.");
         } else if (qtd == -1) {
@@ -424,8 +432,13 @@ public class TelaVenda extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btAddProdActionPerformed
 
+    /**
+     * Recebe o valor do dinheiro do pagamento.
+     * @param evt 
+     */
     private void ftfValorRecebidoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ftfValorRecebidoFocusLost
         // TODO add your handling code here:
+        // Formata o recebimento para não dar erro recebendo % ou vírgulas, e define o valor do troco no label.
         if (ftfValorRecebido.getText().isEmpty() || Float.parseFloat(ftfValorRecebido.getText().replace(",", ".")) <= Float.parseFloat(lbTotal.getText().replace(",", "."))) {
             lbTroco.setText("0.00");
         } else {
@@ -433,6 +446,10 @@ public class TelaVenda extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_ftfValorRecebidoFocusLost
 
+    /**
+     * Cancela a venda atual, limpando os campos e devolvendo as quantidades para os produtos que estavam na tabela.
+     * @param evt 
+     */
     private void btCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarActionPerformed
         // TODO add your handling code here:
 
@@ -465,6 +482,10 @@ public class TelaVenda extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ftfValorRecebidoActionPerformed
 
+    /**
+     * Finaliza a venda, salvando os novos estados dos produtos no arquivo de produtos.
+     * @param evt 
+     */
     private void btFinalizarVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFinalizarVendaActionPerformed
         // TODO add your handling code here:
         if (ftfValorRecebido.getText().isEmpty()) {             //getText().isEmpty() foi o jeito que encontramos de identificar o JFormattedTextField vazio.
@@ -529,11 +550,19 @@ public class TelaVenda extends javax.swing.JInternalFrame {
         this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2);
     }
 
+    /**
+     * Insere uma nova linha na tabela.
+     * @param prod Produto a ser adicionado na tabela.
+     * @param qtd Quantidade do produto que está sendo comprada.
+     */
     private void inserirLinha(Produto prod, int qtd) {
         tbModelo.addRow(new Object[]{prod.getCodigo(), prod.getDescricao(), qtd, prod.getPrecoVenda(), (prod.getPrecoVenda() * qtd)});
 //        tbProdutosPedido.setModel(tbModelo);
     }
 
+    /**
+     * Remove todos os produtos que estavam na tabela.
+     */
     private void removerLinhas() {
         int linhas = tbModelo.getRowCount();
         for (int i = linhas; i > 0; i--) {
@@ -541,6 +570,9 @@ public class TelaVenda extends javax.swing.JInternalFrame {
         }
     }
 
+    /**
+     * Limpa os campos da tela.
+     */
     private void limparCampos() {
         lbTotal.setText("0.00");
         lbTroco.setText("0.00");

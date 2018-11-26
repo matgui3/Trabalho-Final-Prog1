@@ -23,6 +23,9 @@ public class Loja {
     private ArrayList<Produto> produtos;
     private ArrayList<Pessoa> pessoas;
 
+    /**
+     * Método construtor da Loja, que inicia as listas e carrega os itens dos arquivos.
+     */
     public Loja() {
         this.produtos = new ArrayList<Produto>();
         this.pessoas = new ArrayList<Pessoa>();
@@ -30,10 +33,19 @@ public class Loja {
         lerProdutosArquivo();
     }
 
+    /**
+     * 
+     * @return Retorna o arrayList contendo os produtos cadastrados.
+     */
     public ArrayList<Produto> getProdutos() {
         return this.produtos;
     }
 
+    /**
+     * Adiciona um produto ao arraylist produtos.
+     * @param prod Produto a ser adicionado no arraylist.
+     * @return Retorna se o produto foi adicionado.
+     */
     public boolean addProdutos(Produto prod) {
         for (Produto produto : produtos) {
             if (produto.getCodigo() == prod.getCodigo()) {
@@ -45,6 +57,10 @@ public class Loja {
         return true;
     }
 
+    
+    /**
+     * Grava os produtos (ArrayList produtos) no arquivo.
+     */
     public void gravarProdutoArquivo() {
         File arq = new File("C:/ArquivoProdutosJava.txt");
         try {
@@ -64,6 +80,9 @@ public class Loja {
         }
     }
 
+    /**
+     * Recebe os produtos do arquivo e os guarda no ArrayList produtos.
+     */
     public void lerProdutosArquivo() {
         File arq = new File("C:/ArquivoProdutosJava.txt");
         try {
@@ -72,6 +91,9 @@ public class Loja {
 
             String linha = leitorTexto.readLine();
 
+            /**
+             * Verificação para identificar o fim do arquivo, ou quando o arquivo está vazio.
+             */
             while (linha != null && linha.length() > 1) {
 
                 String[] valores = linha.split(";");
@@ -103,6 +125,9 @@ public class Loja {
 
     }
 
+    /**
+     * Recebe as pessoas do arquivo e os guarda no ArrayList pessoas.
+     */
     public void lerPessoasArquivo() {
         File arq = new File("C:/ArquivoPessoasJava.txt");
         try {
@@ -122,6 +147,7 @@ public class Loja {
                 String email = valores[4];
                 int codigo = Integer.parseInt(valores[5]);
 
+                // Identificando se a pessoa é um cliente ou um fornecedor.
                 if (tipo == 'C') {
                     String cpf = valores[6];
                     String rg = valores[7];
@@ -174,10 +200,17 @@ public class Loja {
 
     }
 
+    /**
+     * Adiciona uma pessoa ao arraylist de pessoas.
+     * @param pessoa  Pessoa a ser adicionada no ArrayList.
+     */
     public void addPessoa(Pessoa pessoa) {
         pessoas.add(pessoa);
     }
-
+    
+    /**
+     * Grava as pessoas do ArrayList pessoas no arquivo.
+     */
     public void gravarPessoasArquivo() {
         File arq = new File("C:/ArquivoPessoasJava.txt");
         try {

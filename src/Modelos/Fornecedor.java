@@ -1,7 +1,7 @@
 package Modelos;
 
 /**
- *
+ * Classe que contém os objetos de tipo Fornecedor.
  * @author Rodrigo e Guilherme
  */
 public class Fornecedor extends Pessoa {

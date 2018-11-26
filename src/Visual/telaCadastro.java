@@ -8,6 +8,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
+ * Tela principal do sistema.
  *
  * @author Rodrigo e Guilherme
  */
@@ -22,7 +23,7 @@ public class telaCadastro extends javax.swing.JFrame {
     protected Loja loja;
 
     /**
-     * Creates new form telaCadastro
+     * Inicia a tela principal do sistema.
      */
     public telaCadastro() {
         loja = new Loja();
@@ -182,11 +183,11 @@ public class telaCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenu1ActionPerformed
 
     private void optCadClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optCadClienteActionPerformed
-        // verifica se tem algum jInternalFrame igual aberto
+        // Verifica se tem algum jInternalFrame igual aberto
         if (verCliente == null) {
             verCliente = new TelaCliente(loja);
         }
-// se não estiver visível ele adiciona ao jDP e torna visível
+        // Se não estiver visível ele adiciona ao jDP e torna visível
         if (!verCliente.isVisible()) {
             jDesktopPane1.add(verCliente);
             verCliente.setVisible(true);
@@ -210,11 +211,11 @@ public class telaCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_optSairActionPerformed
 
     private void optCadFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optCadFornecedorActionPerformed
-        // verifica se tem algum jInternalFrame igual aberto
+        // Verifica se tem algum jInternalFrame igual aberto
         if (verFornecedor == null) {
             verFornecedor = new TelaFornecedor();
         }
-// se não estiver visível ele adiciona ao jDP e torna visível
+        // Se não estiver visível ele adiciona ao jDP e torna visível
         if (!verFornecedor.isVisible()) {
             jDesktopPane1.add(verFornecedor);
             verFornecedor.setVisible(true);

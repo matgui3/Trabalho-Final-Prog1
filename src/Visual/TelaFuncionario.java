@@ -8,13 +8,13 @@ import java.util.logging.Logger;
 
 
 /**
- *
+ * Tela de cadastro de funcionários.
  * @author Rodrigo e Guilherme
  */
 public class TelaFuncionario extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form TelaFuncionario
+     * Cria a tela de cadastro de funcionários.
      */
     public TelaFuncionario() {
         initComponents();

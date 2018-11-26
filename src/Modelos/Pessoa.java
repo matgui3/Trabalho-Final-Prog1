@@ -1,7 +1,7 @@
 package Modelos;
 
 /**
- *
+ * Classe que cria as pessoas do sistema.
  * @author Rodrigo e Guilherme
  */
 public class Pessoa {
